@@ -1,8 +1,11 @@
 test:
     (find programs && find tests) | entr -s 'clear && RUST_LOG= anchor test'
 
+#bankrun:
+#    (find programs && find tests) | entr -csr 'anchor build -p autocrat_v0 && RUST_LOG= yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/autocratV0.ts'
+
 bankrun:
-    (find programs && find tests) | entr -csr 'anchor build -p autocrat_v0 && RUST_LOG= yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/autocratV0.ts'
+    (find programs && find tests) | entr -csr 'anchor build -p twap_cpmm && RUST_LOG= yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/twapCpmm.ts'
 
 bankrun-with-logs:
     (find programs && find tests) | entr -csr 'anchor build -p autocrat_v0 && yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/autocratV0.ts'
