@@ -23,7 +23,7 @@ import {
   createAssociatedTokenAccount,
   mintTo,
   getAccount,
-  mintToOverride
+  mintToOverride,
 } from "spl-token-bankrun";
 
 export type TwapCpmmProgram = Program<TwapCpmm>;
@@ -36,12 +36,7 @@ const TWAP_CPMM_PROGRAM_ID = new PublicKey(
 const WSOL = new PublicKey("So11111111111111111111111111111111111111112");
 
 describe("twap_cpmm", async function () {
-  let provider,
-    connection,
-    program,
-    payer,
-    context,
-    banksClient;
+  let provider, connection, program, payer, context, banksClient;
 
   before(async function () {
     context = await startAnchor("./", [], []);
@@ -62,13 +57,21 @@ describe("twap_cpmm", async function () {
     it("initializes a market", async function () {
       const mintAuthority = Keypair.generate();
 
-      const base = await createMint(banksClient, payer, mintAuthority.publicKey, mintAuthority.publicKey, 9);
+      const base = await createMint(
+        banksClient,
+        payer,
+        mintAuthority.publicKey,
+        mintAuthority.publicKey,
+        9
+      );
       const [market] = anchor.web3.PublicKey.findProgramAddressSync(
         [anchor.utils.bytes.utf8.encode("WWCACOTMICMIBMHAFTTWYGHMB")],
         program.programId
       );
-      let tx = await program.methods.initMarket()
-        .accounts({market, base, quote: WSOL}).rpc();
+      let tx = await program.methods
+        .initMarket()
+        .accounts({ market, base, quote: WSOL })
+        .rpc();
 
       const storedMarket = await program.account.market.fetch(market);
 
@@ -77,5 +80,3 @@ describe("twap_cpmm", async function () {
     });
   });
 });
-
-
