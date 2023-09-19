@@ -54,13 +54,26 @@ describe("twap_cpmm", async function () {
       TWAP_CPMM_PROGRAM_ID,
       provider
     );
+
+    payer = program.provider.wallet.payer;
   });
 
-  describe("#initialize", async function () {
-    it("initializes the DAO", async function () {
-      let tx = await program.methods.initialize().rpc();
+  describe("#initialize_market", async function () {
+    it("initializes a market", async function () {
+      const mintAuthority = Keypair.generate();
 
-      console.log(tx);
+      const base = await createMint(banksClient, payer, mintAuthority.publicKey, mintAuthority.publicKey, 9);
+      const [market] = anchor.web3.PublicKey.findProgramAddressSync(
+        [anchor.utils.bytes.utf8.encode("WWCACOTMICMIBMHAFTTWYGHMB")],
+        program.programId
+      );
+      let tx = await program.methods.initMarket()
+        .accounts({market, base, quote: WSOL}).rpc();
+
+      const storedMarket = await program.account.market.fetch(market);
+
+      assert.ok(storedMarket.quote.equals(WSOL));
+      assert.ok(storedMarket.base.equals(base));
     });
   });
 });
