@@ -4,7 +4,7 @@
 seeds = false
 skip-lint = false
 
-[programs]
+[programs.devnet]
 autocrat_migrator = "ER4LK9kvfgo7McNaQAan5U7qNsCb56btNUcd9LkkVT4N"
 autocrat_v0 = "GTnsZQdvx13wXye8gB39P6ZcrEEiajmx796y7BsHrEBm"
 conditional_vault = "DumoESzUQRzSPufr3oXms88rt52gTNQ52ADSmM5pbYwp"
@@ -17,6 +17,7 @@ cluster = "Devnet"
 wallet = "./dev-admin.json"
 
 [scripts]
+init = "yarn run ts-node scripts/initializeDao.ts"
 airdrop = "yarn run ts-node scripts/airdrop.ts"
 autocrat_v0 = "yarn run ts-node scripts/autocratV0.ts"
 clob = "yarn run tsc scripts/clob.ts --esModuleInterop --resolveJsonModule && node scripts/clob.js && rm scripts/clob.js"

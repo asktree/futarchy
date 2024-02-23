@@ -68,7 +68,7 @@ import { open } from "fs";
 
 // this test file isn't 'clean' or DRY or whatever; sorry!
 const AUTOCRAT_PROGRAM_ID = new PublicKey(
-  "metaX99LHn3A7Gr7VAcCfXhpfocvpMpqQ3eyp3PGUUq"
+  "GTnsZQdvx13wXye8gB39P6ZcrEEiajmx796y7BsHrEBm"
 );
 
 const CONDITIONAL_VAULT_PROGRAM_ID = new PublicKey(

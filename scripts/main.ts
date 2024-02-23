@@ -27,7 +27,7 @@ const OpenbookTwapIDL: OpenbookTwap = require("../tests/fixtures/openbook_twap.j
 const AutocratMigratorIDL: AutocratMigrator = require("../target/idl/autocrat_migrator.json");
 
 const AUTOCRAT_PROGRAM_ID = new PublicKey(
-  "metaX99LHn3A7Gr7VAcCfXhpfocvpMpqQ3eyp3PGUUq"
+  "GTnsZQdvx13wXye8gB39P6ZcrEEiajmx796y7BsHrEBm"
 );
 const CONDITIONAL_VAULT_PROGRAM_ID = new PublicKey(
   "vaU1tVLj8RFk7mNj1BxqgAsMKKaL8UvEUHvU3tdbZPe"
@@ -165,7 +165,7 @@ async function initializeVault(
   return vault;
 }
 
-async function initializeDAO(META: any, USDC: any) {
+export async function initializeDAO() {
   await autocratProgram.methods
     .initializeDao()
     .accounts({
@@ -173,7 +173,7 @@ async function initializeDAO(META: any, USDC: any) {
       metaMint: META,
       usdcMint: USDC,
     })
-    .rpc();
+    .rpc({skipPreflight: true});
 }
 
 // async function finalizeProposal(proposal: anchor.web3.PublicKey) {
