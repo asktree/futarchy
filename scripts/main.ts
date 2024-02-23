@@ -30,7 +30,7 @@ const AUTOCRAT_PROGRAM_ID = new PublicKey(
   "GTnsZQdvx13wXye8gB39P6ZcrEEiajmx796y7BsHrEBm"
 );
 const CONDITIONAL_VAULT_PROGRAM_ID = new PublicKey(
-  "vaU1tVLj8RFk7mNj1BxqgAsMKKaL8UvEUHvU3tdbZPe"
+  "DumoESzUQRzSPufr3oXms88rt52gTNQ52ADSmM5pbYwp"
 );
 const OPENBOOK_TWAP_PROGRAM_ID = new PublicKey(
   "TWAPrdhADy2aTKN5iFZtNnkQYXERD9NvKjPFVPMSCNN"
@@ -43,7 +43,7 @@ export const META = new PublicKey(
   "96eWNK8LnBxKJqu3xTExiupXturPexTGXuzTzqJaLFrd"
 );
 export const DEVNET_USDC = new PublicKey(
-  "B9CZDrwg7d34MiPiWoUSmddriCtQB5eB2h9EUSDHt48b"
+  "3DSbEehBqjLZx23sXSDV9ehNEb1QyQ4pmYSipNuLKq1u"
 );
 export const USDC = new PublicKey(
   "3DSbEehBqjLZx23sXSDV9ehNEb1QyQ4pmYSipNuLKq1u"
