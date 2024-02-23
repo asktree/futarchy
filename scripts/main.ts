@@ -40,13 +40,13 @@ export const OPENBOOK_PROGRAM_ID = new PublicKey(
 );
 
 export const META = new PublicKey(
-  "METADDFL6wWMWEoKTFJwcThTbUmtarRJZjRpzUvkxhr"
+  "96eWNK8LnBxKJqu3xTExiupXturPexTGXuzTzqJaLFrd"
 );
 export const DEVNET_USDC = new PublicKey(
   "B9CZDrwg7d34MiPiWoUSmddriCtQB5eB2h9EUSDHt48b"
 );
 export const USDC = new PublicKey(
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+  "3DSbEehBqjLZx23sXSDV9ehNEb1QyQ4pmYSipNuLKq1u"
 );
 export const PROPH3t_PUBKEY = new PublicKey(
   "65U66fcYuNfqN12vzateJhZ4bgDuxFWN9gMwraeQKByg"

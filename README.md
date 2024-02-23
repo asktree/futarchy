@@ -26,7 +26,7 @@ either devnet, mainnet, or (recommended) an RPC URL.
 
 All programs are immutable and verifiable, and have been verified with the OtterSec API.
 
-The META token mint is METADDFL6wWMWEoKTFJwcThTbUmtarRJZjRpzUvkxhr.
+The META token mint is 96eWNK8LnBxKJqu3xTExiupXturPexTGXuzTzqJaLFrd.
 
 ## Run Instructions
 

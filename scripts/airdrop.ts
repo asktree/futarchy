@@ -75,7 +75,7 @@ const technoAnalysts = [
 
 async function main() {
   const META = new anchor.web3.PublicKey(
-    "METADDFL6wWMWEoKTFJwcThTbUmtarRJZjRpzUvkxhr"
+    "96eWNK8LnBxKJqu3xTExiupXturPexTGXuzTzqJaLFrd"
   );
 
   const senderAcc = await token.getOrCreateAssociatedTokenAccount(
